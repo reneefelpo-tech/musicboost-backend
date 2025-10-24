@@ -10,7 +10,7 @@ from typing import Optional
 
 # Setup logging
 log_dir = Path("/app/backend/logs")
-log_dir.mkdir(exist_ok=True)
+log_dir.mkdir(parents=True, exist_ok=True)
 
 email_log_file = log_dir / "emails.log"
 logging.basicConfig(
