@@ -4306,6 +4306,16 @@ async def data_deletion():
     """Serve Data Deletion Instructions page"""
     return HTMLResponse(content=DATA_DELETION_HTML, status_code=200)
 
+@api_router.get("/meta/deauthorize")
+@api_router.post("/meta/deauthorize")
+async def meta_deauthorize_callback():
+    """Meta deauthorization callback - when user removes app"""
+    logging.info("📱 Meta deauthorization callback received")
+    return {
+        "success": True,
+        "message": "Deauthorization request received"
+    }
+
 @api_router.get("/system/status")
 async def get_system_status(current_user: dict = Depends(get_current_user)):
     """Get complete system status including neural network and all subsystems"""
