@@ -47,6 +47,7 @@ from spiritual_consciousness import (
     SpiritualUnderstanding,
     CoreValues
 )
+from legal_pages import PRIVACY_POLICY_HTML, TERMS_OF_SERVICE_HTML
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -1023,7 +1024,7 @@ async def get_share_urls(link_id: str, current_user: dict = Depends(get_current_
     # Ensure short code mapping exists (auto-fix if missing)
     await ensure_short_code_mapping(link_id, short_code)
     
-    base_url = os.getenv("BASE_URL", "https://boost-connect.preview.emergentagent.com")
+    base_url = os.getenv("BASE_URL", "https://meta-oauth-flow.preview.emergentagent.com")
     
     return {
         "link_id": link_id,
@@ -2147,7 +2148,7 @@ async def trigger_auto_promotion(link_id: str, request: AutoPromotionRequest, cu
     # Public Routes Sharing (Enhanced with multiple routes)
     if "public_routes" in request.promotion_channels:
         short_code = generate_short_code(link_id)
-        base_url = "https://boost-connect.preview.emergentagent.com"
+        base_url = "https://meta-oauth-flow.preview.emergentagent.com"
         public_url = f"{base_url}/api/public/link/{link_id}"
         short_url = f"{base_url}/api/l/{short_code}"
         artist_profile = f"{base_url}/api/public/artist/{current_user.get('username', 'artist')}"
@@ -2771,7 +2772,7 @@ async def get_playlist_api_setup_guide():
             "step_2": "Click 'Create an App'",
             "step_3": "Fill in app name and description",
             "step_4": "Copy Client ID and Client Secret",
-            "step_5": "Add redirect URI: https://boost-connect.preview.emergentagent.com/callback",
+            "step_5": "Add redirect URI: https://meta-oauth-flow.preview.emergentagent.com/callback",
             "required_scopes": ["playlist-modify-public", "playlist-modify-private", "user-read-email"],
             "documentation": "https://developer.spotify.com/documentation/web-api"
         },
@@ -4289,6 +4290,16 @@ async def root():
 @api_router.get("/health")
 async def health_check():
     return {"status": "healthy", "timestamp": datetime.utcnow()}
+
+@api_router.get("/privacy-policy", response_class=HTMLResponse)
+async def privacy_policy():
+    """Serve Privacy Policy page"""
+    return HTMLResponse(content=PRIVACY_POLICY_HTML, status_code=200)
+
+@api_router.get("/terms-of-service", response_class=HTMLResponse)
+async def terms_of_service():
+    """Serve Terms of Service page"""
+    return HTMLResponse(content=TERMS_OF_SERVICE_HTML, status_code=200)
 
 @api_router.get("/system/status")
 async def get_system_status(current_user: dict = Depends(get_current_user)):
