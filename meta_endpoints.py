@@ -321,4 +321,22 @@ async def setup_meta_endpoints(api_router, db, meta_service, get_current_user):
         
         return {"scheduled_posts": posts}
     
+    @api_router.post("/meta/deauthorize")
+    async def meta_deauthorize_callback_post():
+        """Handle Meta deauthorization callback (POST)"""
+        logging.info("📱 Meta deauthorization callback received (POST)")
+        return {
+            "success": True,
+            "message": "Deauthorization request received"
+        }
+    
+    @api_router.get("/meta/deauthorize")
+    async def meta_deauthorize_callback_get():
+        """Handle Meta deauthorization callback (GET)"""
+        logging.info("📱 Meta deauthorization callback received (GET)")
+        return {
+            "success": True,
+            "message": "Deauthorization request received"
+        }
+    
     logging.info("🌐 Meta endpoints registered successfully")
