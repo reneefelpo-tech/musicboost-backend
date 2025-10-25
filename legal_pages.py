@@ -83,6 +83,119 @@ PRIVACY_POLICY_HTML = """
 </html>
 """
 
+DATA_DELETION_HTML = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Deletion Instructions - Music Boost</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 { color: #1a1a1a; margin-bottom: 10px; }
+        h2 { color: #2c3e50; margin-top: 30px; }
+        p { margin-bottom: 15px; }
+        ul { margin-bottom: 15px; }
+        li { margin-bottom: 10px; }
+        .highlight { background-color: #f0f0f0; padding: 15px; border-radius: 5px; margin: 20px 0; }
+        .contact { background-color: #e8f4f8; padding: 15px; border-radius: 5px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <h1>Data Deletion Instructions</h1>
+    
+    <h2>How to Delete Your Data from Music Boost</h2>
+    <p>We respect your privacy and provide multiple ways to delete your personal data from our platform.</p>
+    
+    <h2>Option 1: Delete Account Through the App</h2>
+    <div class="highlight">
+        <p><strong>Fastest Method:</strong></p>
+        <ol>
+            <li>Open the Music Boost mobile app</li>
+            <li>Go to <strong>Profile</strong> → <strong>Settings</strong></li>
+            <li>Scroll down to <strong>Account</strong> section</li>
+            <li>Tap <strong>"Delete Account"</strong></li>
+            <li>Confirm deletion when prompted</li>
+        </ol>
+        <p><strong>Result:</strong> All your data will be permanently deleted within 24 hours.</p>
+    </div>
+    
+    <h2>Option 2: Request Data Deletion via Email</h2>
+    <div class="highlight">
+        <p>If you cannot access the app, email us:</p>
+        <p><strong>Email:</strong> support@musicboost.site</p>
+        <p><strong>Subject:</strong> Data Deletion Request</p>
+        <p><strong>Include:</strong></p>
+        <ul>
+            <li>Your registered email address</li>
+            <li>Username (if you remember it)</li>
+            <li>Confirmation that you want all data deleted</li>
+        </ul>
+        <p><strong>Response Time:</strong> We will process your request within 7 business days.</p>
+    </div>
+    
+    <h2>What Data Gets Deleted?</h2>
+    <p>When you delete your account, we permanently remove:</p>
+    <ul>
+        <li>✓ Your account information (email, username, password)</li>
+        <li>✓ All promotional links you created</li>
+        <li>✓ Campaign analytics and performance data</li>
+        <li>✓ Social media connection data (Spotify, Facebook, Instagram)</li>
+        <li>✓ All personal preferences and settings</li>
+        <li>✓ Any messages or communications</li>
+    </ul>
+    
+    <h2>Data We May Retain</h2>
+    <p>For legal and security purposes, we may retain:</p>
+    <ul>
+        <li>Anonymized analytics data (no personal identifiers)</li>
+        <li>Transaction records (if required by law)</li>
+        <li>Records of Terms of Service violations</li>
+    </ul>
+    <p>These are kept in compliance with legal obligations and cannot be linked back to you.</p>
+    
+    <h2>Third-Party Data</h2>
+    <p>If you connected social media accounts (Spotify, Facebook, Instagram), you should also:</p>
+    <ol>
+        <li>Go to your social media platform settings</li>
+        <li>Navigate to <strong>Apps and Websites</strong></li>
+        <li>Find <strong>Music Boost</strong> and remove access</li>
+    </ol>
+    <p>This ensures all permissions are revoked on their platforms as well.</p>
+    
+    <h2>Confirmation</h2>
+    <p>Once your data is deleted, you will receive a confirmation email to your registered address (if email deletion was requested).</p>
+    
+    <div class="contact">
+        <h3>Need Help?</h3>
+        <p>If you have questions or issues with data deletion:</p>
+        <p><strong>Email:</strong> support@musicboost.site</p>
+        <p><strong>Response Time:</strong> Within 48 hours</p>
+    </div>
+    
+    <h2>Your Rights</h2>
+    <p>Under data protection laws (GDPR, CCPA, etc.), you have the right to:</p>
+    <ul>
+        <li>Request a copy of your data</li>
+        <li>Correct inaccurate data</li>
+        <li>Delete your data (as described above)</li>
+        <li>Object to data processing</li>
+    </ul>
+    
+    <p style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ccc; color: #666;">
+        Last Updated: October 24, 2025
+    </p>
+</body>
+</html>
+"""
+
 TERMS_OF_SERVICE_HTML = """
 <!DOCTYPE html>
 <html lang="en">

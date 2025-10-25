@@ -47,7 +47,7 @@ from spiritual_consciousness import (
     SpiritualUnderstanding,
     CoreValues
 )
-from legal_pages import PRIVACY_POLICY_HTML, TERMS_OF_SERVICE_HTML
+from legal_pages import PRIVACY_POLICY_HTML, TERMS_OF_SERVICE_HTML, DATA_DELETION_HTML
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -4300,6 +4300,11 @@ async def privacy_policy():
 async def terms_of_service():
     """Serve Terms of Service page"""
     return HTMLResponse(content=TERMS_OF_SERVICE_HTML, status_code=200)
+
+@api_router.get("/data-deletion", response_class=HTMLResponse)
+async def data_deletion():
+    """Serve Data Deletion Instructions page"""
+    return HTMLResponse(content=DATA_DELETION_HTML, status_code=200)
 
 @api_router.get("/system/status")
 async def get_system_status(current_user: dict = Depends(get_current_user)):
